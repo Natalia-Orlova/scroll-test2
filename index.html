@@ -10,19 +10,87 @@
         margin: 0;
         padding: 0;
       }
+      .header {
+        color: #fff;
+        text-transform: uppercase;
+        height: 100vh;
+        font-size: 48px;
+        background-color: #000;
+        text-align: center;
+        padding-top: 50vh;
+      }
+      .scrolly-video {
+        width: 100%;
+      }
+      .video-container {
+        position: relative;
+        height: 400vh;
+        background-color: #000;
+      }
+      .video-container2 {
+        height: 1000vh;
+        background-color: #000;
+      }
+      .text-block {
+        position: relative;
+        z-index: 1;
+        max-width: 400px;
+        color: #fff;
+        font-size: 32px;
+      }
+      .text-block:nth-child(odd) {
+        margin: 0 4% 90vh auto;
+      }
+      .text-block:nth-child(even) {
+        margin: 0 auto 90vh 4%;
+      }
+      .text-content {
+        font-size: 48px;
+        min-height: 100vh;
+        background-color: #000;
+        color: #fff;
+        padding: 4%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (max-width: 991px) {
+        .text-block:nth-child(odd), .text-block:nth-child(even) {
+        margin: 0 auto 90vh;
+      }
+      }
     </style>
   </head>
 
 <body>
-  <div style="height: 300vh;">
-    <div id="scrolly-video"></div>
+  <div class="header">
+    Lorem ipsum dolor sit amet.
+  </div>
+  <div class="video-container">
+    <div id="scrolly-video1" class="scrolly-video"></div>
+    <div class="text-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo fugiat, consequuntur ex error quibusdam mollitia.</div>
+    <div class="text-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo fugiat, consequuntur ex error quibusdam mollitia.</div>
+    <div class="text-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo fugiat, consequuntur ex error quibusdam mollitia.</div>
+  </div>
+  <div class="text-content">
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nobis, iste eos fuga architecto hic assumenda quae debitis, rerum autem voluptatibus. Beatae sint vel omnis debitis itaque quia expedita facere dolorem tempore quasi eveniet ad, explicabo est hic repudiandae, nesciunt recusandae rem qui earum fuga error ea cumque. Odit, non.
+    </div>
+  </div>
+  <div class="video-container2" class="scrolly-video">
+    <div id="scrolly-video2"></div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
   <script type="text/javascript">
     new ScrollyVideo({
-      scrollyVideoContainer: "scrolly-video",
+      scrollyVideoContainer: "scrolly-video1",
       src: "3.mp4"
+    });
+
+    new ScrollyVideo({
+      scrollyVideoContainer: "scrolly-video2",
+      src: "macpro_main_desktop.mp4",
     });
   </script>
 </body>
