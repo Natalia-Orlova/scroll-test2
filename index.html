@@ -10,9 +10,6 @@
         margin: 0;
         padding: 0;
       }
-      body {
-        display: none;
-      }
       .header {
         color: #fff;
         text-transform: uppercase;
@@ -22,13 +19,32 @@
         text-align: center;
         padding-top: 50vh;
       }
-      .scrolly-video {
+      .test {
+        min-height: 100vh;
+        color: #fff;
+        background-color: #000;
+        display: grid;
+        justify-items: center;
+        gap: 20%;
+        padding: 20% 0;
+      }
+      .test-item {
+        display: flex;
+        width: 50%;
+        gap: 5%;
+        align-items: center;
+        font-size: 28px;
+      }
+      .test-item:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+      video {
         width: 100%;
       }
       .video-container {
         position: relative;
         height: 400vh;
-        background-color: #000;
+        /* background-color: #000; */
       }
       .video-container2 {
         height: 1000vh;
@@ -59,8 +75,19 @@
       }
       @media (max-width: 991px) {
         .text-block:nth-child(odd), .text-block:nth-child(even) {
-        margin: 0 auto 90vh;
-      }
+          margin: 0 auto 90vh;
+        }
+        .test {
+          height:300vh;
+          gap: 5%;
+        }
+        .test-item {
+          flex-direction: column;
+          width: 90%;
+        }
+        .test-item:nth-child(odd) {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
@@ -68,6 +95,25 @@
 <body>
   <div class="header">
     Lorem ipsum dolor sit amet.
+  </div>
+  <div class="text-content">
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nobis, iste eos fuga architecto hic assumenda quae debitis, rerum autem voluptatibus. Beatae sint vel omnis debitis itaque quia expedita facere dolorem tempore quasi eveniet ad, explicabo est hic repudiandae, nesciunt recusandae rem qui earum fuga error ea cumque. Odit, non. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos incidunt repellat dolorem quasi ducimus placeat cumque, fuga labore modi eius vitae obcaecati rem voluptas atque? Non accusamus cupiditate eos ducimus vero eius aspernatur possimus. Nulla explicabo voluptate harum? Quidem ipsa asperiores porro saepe dignissimos deserunt recusandae, quod reprehenderit, nemo commodi quasi sequi explicabo voluptates ex laboriosam vitae laudantium provident aliquam magni minima. Eligendi incidunt in nostrum cum obcaecati ipsam adipisci id quae labore, amet nesciunt placeat dolor voluptas veniam voluptates molestiae voluptatibus consectetur sapiente eos, molestias fugit dolores modi! Sint nobis architecto quidem corrupti ipsum obcaecati beatae, veniam praesentium necessitatibus.
+    </div>
+  </div>
+  <div class="test">
+    <div class="test-item">
+      <img src="test.jpg" alt="">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id illo reiciendis aliquid eum architecto dignissimos omnis modi, at, quidem dicta porro! Ratione non, rerum recusandae hic rem magni beatae quis? Libero provident odio ipsum culpa enim vel possimus rem magni!</p>
+    </div>
+    <div class="test-item">
+      <img src="test.jpg" alt="">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id illo reiciendis aliquid eum architecto dignissimos omnis modi, at, quidem dicta porro! Ratione non, rerum recusandae hic rem magni beatae quis? Libero provident odio ipsum culpa enim vel possimus rem magni!</p>
+    </div>
+    <div class="test-item">
+      <img src="test.jpg" alt="">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id illo reiciendis aliquid eum architecto dignissimos omnis modi, at, quidem dicta porro! Ratione non, rerum recusandae hic rem magni beatae quis? Libero provident odio ipsum culpa enim vel possimus rem magni!</p>
+    </div>
   </div>
   <div class="video-container">
     <div id="scrolly-video1" class="scrolly-video"></div>
@@ -89,15 +135,9 @@
   <script type="text/javascript">
     new ScrollyVideo({
       scrollyVideoContainer: "scrolly-video1",
-      src: "shining.mp4"
+      src: "3.mp4"
     });
 
-    const video = document.querySelector('video');
-    console.log(video);
-    video.addEventListener('canplaythrough', () => {
-        console.log('ok');
-        document.body.style.display = 'block';
-    })
     // new ScrollyVideo({
     //   scrollyVideoContainer: "scrolly-video2",
     //   src: "macpro_main_desktop.mp4",
